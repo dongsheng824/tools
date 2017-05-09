@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * 生成随机电话号码、日期
@@ -27,7 +28,7 @@ public class RandomGenerator {
 	}
 
 	public String genRandomPhoneNum(String preNum) {
-		Random random = new Random();
+		Random random = ThreadLocalRandom.current();
 		Long num = random.nextLong();
 		return preNum + num.toString().substring(1, 9);
 	}
@@ -68,10 +69,10 @@ public class RandomGenerator {
 	public String genRandomDate(String begin, String end) throws ParseException {
 		float randomFloat;
 		long num;
-		SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date beginDate = formater.parse(begin);
 		Date endDate = formater.parse(end);
-		Random random = new Random();
+		Random random = ThreadLocalRandom.current();
 		randomFloat = random.nextFloat();
 		num = (long) (randomFloat * (endDate.getTime() - beginDate.getTime()));
 		Date randomDate = new Date(beginDate.getTime() + num);
@@ -81,10 +82,10 @@ public class RandomGenerator {
 	public String genRandomDate(String begin, Long offset) throws ParseException {
 		float randomFloat;
 		long num;
-		SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date beginDate = formater.parse(begin);
 		Date endDate = new Date(beginDate.getTime() + offset * 24 * 60 * 60 * 1000);
-		Random random = new Random();
+		Random random = ThreadLocalRandom.current();
 		randomFloat = random.nextFloat();
 		num = (long) (randomFloat * (endDate.getTime() - beginDate.getTime()));
 		Date randomDate = new Date(beginDate.getTime() + num);
