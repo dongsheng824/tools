@@ -1,11 +1,9 @@
 package com.guods.tools;
 
+import java.io.File;
 import java.text.ParseException;
-import java.util.concurrent.ThreadLocalRandom;
 
 import javax.script.ScriptException;
-
-import com.guods.tools.execjs.JsExecutor;
 
 /**
  * Hello world!
@@ -13,15 +11,15 @@ import com.guods.tools.execjs.JsExecutor;
  */
 public class App 
 {
-    public static void main( String[] args ) throws ParseException, ScriptException, NoSuchMethodException
+    public static void main( String[] args ) throws Exception
     {
-    	JsExecutor jsExecutor = new JsExecutor();
-    	jsExecutor.getScriptEngineFactory();
-    	jsExecutor.jsFunction();
-    	jsExecutor.testScriptInterface();
-    	jsExecutor.injectObject();
-    	jsExecutor.jsFunctionWithParam();
-    	jsExecutor.jsFunctionWithoutParam();
+//    	JsExecutor jsExecutor = new JsExecutor();
+//    	jsExecutor.getScriptEngineFactory();
+//    	jsExecutor.jsFunction();
+//    	jsExecutor.testScriptInterface();
+//    	jsExecutor.injectObject();
+//    	jsExecutor.jsFunctionWithParam();
+//    	jsExecutor.jsFunctionWithoutParam();
     	
 //    	RandomGenerator generator = new RandomGenerator();
 //    	generator.genRandomPhoneNums("159");
@@ -30,6 +28,9 @@ public class App
 //    	ThreadLocalRandom current = ThreadLocalRandom.current();
 //    	System.out.println(current.nextDouble());
 
+    	TextRecognizer textRecognizer = new TextRecognizer();
+    	String result = textRecognizer.recognizeText(new File("c:\\1.bmp"));
+    	System.out.println(new String(result.getBytes("UTF-8")));
     }
     
 }
