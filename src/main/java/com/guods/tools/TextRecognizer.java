@@ -32,8 +32,7 @@ public class TextRecognizer {
         cmd.add(outputFile.getName());
         cmd.add("-l");
 //        cmd.add("eng");	// 英文
-        cmd.add("chi_sim"); //简体中文
-        
+        cmd.add("chi_sim"); //识别简体中文
         //启动exe进程
         ProcessBuilder pb = new ProcessBuilder();        
         pb.directory(imageFile.getParentFile());

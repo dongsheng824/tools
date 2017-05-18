@@ -28,9 +28,15 @@ public class App
 //    	ThreadLocalRandom current = ThreadLocalRandom.current();
 //    	System.out.println(current.nextDouble());
 
-    	TextRecognizer textRecognizer = new TextRecognizer();
-    	String result = textRecognizer.recognizeText(new File("c:\\1.bmp"));
-    	System.out.println(new String(result.getBytes("UTF-8")));
+//    	TextRecognizer textRecognizer = new TextRecognizer();
+//    	String result = textRecognizer.recognizeText(new File("c:\\1.bmp"));
+//    	System.out.println(new String(result.getBytes("UTF-8")));
+    	
+    	ProcessCmd processCmd = new ProcessCmd();
+//    	String[] cmd = {"ipconfig", "-all"};
+    	String[] cmd = {"ipconfig"};
+    	String result = processCmd.execCmd(cmd);
+    	System.out.println(result);
     }
     
 }
