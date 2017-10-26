@@ -91,4 +91,22 @@ public class RandomGenerator {
 		Date randomDate = new Date(beginDate.getTime() + num);
 		return formater.format(randomDate);
 	}
+	/**
+	 * 生成随机码
+	 * @return
+	 */
+	public String genRandomCode(){
+		char[] seed = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 
+				'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+				'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+		Random random = ThreadLocalRandom.current();
+		StringBuffer sb = new StringBuffer();
+		int k;
+		for (int i = 0; i < 4; i++) {
+			k = random.nextInt();
+			k = k >= 0 ? k : -k;
+			sb.append(seed[k%36]);
+		}
+		return sb.toString();
+	}
 }
