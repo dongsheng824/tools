@@ -8,14 +8,14 @@ import java.net.URISyntaxException;
 public class UseBrowser {
 
 	public static void main(String[] args) {  
-        openDefaultBrowser();
-        openIEBrowser();
+        openDefaultBrowser("http://www.koolearn.com/shiti/list-2-1-101879-1.html");
+//        openIEBrowser();
     }
 	
-	public static void openDefaultBrowser(){  
+	public static void openDefaultBrowser(String url){  
         //启用系统默认浏览器来打开网址。  
         try {  
-            URI uri = new URI("http://www.baidu.com");  
+            URI uri = new URI(url);  
             Desktop.getDesktop().browse(uri);  
         } catch (URISyntaxException e) {  
             e.printStackTrace();  

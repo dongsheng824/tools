@@ -1,7 +1,5 @@
 package com.guods.tools;
 
-import java.util.HashMap;
-import java.util.Map;
 
 import com.guods.tools.encrypt.RSAEncrypt;
 

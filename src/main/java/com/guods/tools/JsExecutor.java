@@ -9,7 +9,6 @@ import javax.script.ScriptEngineFactory;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
-@SuppressWarnings("restriction")
 public class JsExecutor {
 
 	// java能执行的ScriptEngine
