@@ -22,13 +22,13 @@ public class SerilizeTest {
 		}
 		////////////////////序列化
 		time0 = System.currentTimeMillis();
-		List<String> jsonList = obj2StrByJson(userList);
+//		List<String> jsonList = obj2StrByJson(userList);
 		time1 = System.currentTimeMillis();
 		System.out.println("Json序列化时间: " + (time1 - time0));
 //		System.out.println(jsonList);
 		//
 		time0 = System.currentTimeMillis();
-		List<byte[]> serizeList = obj2StrBySerize(userList);
+//		List<byte[]> serizeList = obj2StrBySerize(userList);
 		time1 = System.currentTimeMillis();
 		System.out.println("Serize序列化时间: " + (time1 - time0));
 //		for (byte[] bs : serizeList) {
@@ -36,12 +36,12 @@ public class SerilizeTest {
 //		}
 		///////////////////反序列化
 		time0 = System.currentTimeMillis();
-		List<User> jsonUserList = str2ObjByJson(jsonList);
+//		List<User> jsonUserList = str2ObjByJson(jsonList);
 		time1 = System.currentTimeMillis();
 		System.out.println("Json反序列化时间: " + (time1 - time0));
 //		System.out.println(jsonUserList);
 		time0 = System.currentTimeMillis();
-		List<User> serizeUserList = str2ObjBySerize(serizeList);
+//		List<User> serizeUserList = str2ObjBySerize(serizeList);
 		time1 = System.currentTimeMillis();
 		System.out.println("Serize反序列化时间: " + (time1 - time0));
 //		for (User u : serizeUserList) {

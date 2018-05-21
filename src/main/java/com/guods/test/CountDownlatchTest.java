@@ -4,31 +4,23 @@ import java.util.concurrent.CountDownLatch;
 
 public class CountDownlatchTest {
 
-	static CountDownLatch countDownLatch = new CountDownLatch(2);
+	static CountDownLatch countDownLatch = new CountDownLatch(5);
 	public static void main(String[] args) throws InterruptedException {
-		new Thread(new Runnable() {
-			public void run() {
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				countDownLatch.countDown();
-				System.out.println("countdown:" + Thread.currentThread().getName());
-			}
-		}).start();
 		
-		new Thread(new Runnable() {
-			public void run() {
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+		for (int i = 0; i < 5; i++) {
+			new Thread(new Runnable() {
+				public void run() {
+					System.out.println("countdown:" + Thread.currentThread().getName());
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					countDownLatch.countDown();
 				}
-				countDownLatch.countDown();
-				System.out.println("countdown:" + Thread.currentThread().getName());
-			}
-		}).start();
+			}).start();
+		}
+		
 		countDownLatch.await();
 		System.out.println("countdown:" + Thread.currentThread().getName());
 	}

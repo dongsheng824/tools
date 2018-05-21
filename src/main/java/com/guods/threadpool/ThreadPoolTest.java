@@ -16,7 +16,7 @@ public class ThreadPoolTest {
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		ThreadPoolTest threadPoolTest = new ThreadPoolTest();
 		ArrayBlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(4);
-		ThreadPoolExecutor threadPool = new ThreadPoolExecutor(2, 4, 5L, TimeUnit.SECONDS, 
+		ThreadPoolExecutor threadPool = new ThreadPoolExecutor(4, 6, 5L, TimeUnit.SECONDS, 
 				workQueue,
 				new ThreadFactory() {
 					

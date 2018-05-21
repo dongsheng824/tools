@@ -4,9 +4,10 @@ public class ClassLoaderTest {
 
 	public static void main(String[] args) throws Exception {
 		MyClassLoader myClassLoader = new MyClassLoader();
-		Class<?> clazz = Class.forName("TestModel", true, myClassLoader);
+		System.out.println(myClassLoader);
+		Class<?> clazz = Class.forName("com.guods.modle.User", true, myClassLoader);
 		Object obj = clazz.newInstance();
-		System.out.println("testModel的类加载器:" + obj.getClass().getClassLoader());
+		System.out.println("User的类加载器:" + clazz.getClassLoader());
 		System.out.println("上下文类加载器:" +Thread.currentThread().getContextClassLoader());
 	}
 }

@@ -18,7 +18,7 @@ public class StreamDemo {
 		Stream<Integer> intStream = Stream.of(1, 2, 3, 4);
 		//无限长的stream
 		Stream<Double> randomStream1 = Stream.generate(()->Math.random());
-		Stream<Double> randomStream2 = Stream.generate(Math::random);
+//		Stream<Double> randomStream2 = Stream.generate(Math::random);
 		randomStream1.limit(10).forEach(System.out::println);
 		Integer reduce = intStream.reduce(0, (sum, item)->sum + item);
 		System.out.println(reduce);
