@@ -1,4 +1,4 @@
-package com.guods.test;
+package com.guods;
 
 public class ShutdownHookTest {
 

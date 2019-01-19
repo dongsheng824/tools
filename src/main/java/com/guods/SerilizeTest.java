@@ -1,4 +1,4 @@
-package com.guods.test;
+package com.guods;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ public class SerilizeTest {
 //		}
 	}
 
-	private static List<String> obj2StrByJson(List<User> objList) {
+	public static List<String> obj2StrByJson(List<User> objList) {
 		ArrayList<String> stringList = new ArrayList<String>();
 		for (User user : objList) {
 			stringList.add(FastJsonUtil.object2String(user));
@@ -57,7 +57,7 @@ public class SerilizeTest {
 		return stringList;
 	}
 
-	private static List<byte[]> obj2StrBySerize(List<User> objList) throws Exception {
+	public static List<byte[]> obj2StrBySerize(List<User> objList) throws Exception {
 		ArrayList<byte[]> bytesList = new ArrayList<byte[]>();
 		for (User User : objList) {
 			bytesList.add(SerializationUtils.serialize((Serializable) User));
@@ -65,7 +65,7 @@ public class SerilizeTest {
 		return bytesList;
 	}
 
-	private static List<User> str2ObjByJson(List<String> strList) {
+	public static List<User> str2ObjByJson(List<String> strList) {
 		ArrayList<User> stringList = new ArrayList<User>();
 		for (String string : strList) {
 			stringList.add(FastJsonUtil.parseJson(string, User.class));
@@ -73,7 +73,7 @@ public class SerilizeTest {
 		return stringList;
 	}
 
-	private static List<User> str2ObjBySerize(List<byte[]> bytesList) throws Exception {
+	public static List<User> str2ObjBySerize(List<byte[]> bytesList) throws Exception {
 		ArrayList<User> userList = new ArrayList<User>();
 		for (byte[] bytes : bytesList) {
 			userList.add(SerializationUtils.deserialize(bytes));

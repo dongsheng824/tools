@@ -1,4 +1,4 @@
-package com.guods.test;
+package com.guods;
 
 import java.util.concurrent.CountDownLatch;
 

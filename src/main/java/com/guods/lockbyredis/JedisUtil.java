@@ -20,7 +20,8 @@ public class JedisUtil {
 		// 在borrow一个jedis实例时，是否提前进行validate操作；如果为true，则得到的jedis实例均是可用的；
 		config.setTestOnBorrow(true);
 
-		jedisPool = new JedisPool(config, "localhost", 6379, 3000, null);
+//		jedisPool = new JedisPool(config, "localhost", 6379, 3000, null);
+		jedisPool = new JedisPool(config, "192.168.80.103", 6379, 3000, "guods");
 	}
 	
 	public static Jedis getJedis() { 

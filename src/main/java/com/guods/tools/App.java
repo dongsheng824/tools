@@ -34,11 +34,11 @@ public class App
 //    	String result = textRecognizer.recognizeText(new File("c:\\1.bmp"));
 //    	System.out.println(new String(result.getBytes("UTF-8")));
     	
-//    	ProcessCmd processCmd = new ProcessCmd();
-//    	String[] cmd = {"ipconfig", "-all"};
+    	ProcessCmd processCmd = new ProcessCmd();
+    	String[] cmd = {"ipconfig", "-all"};
 ////    	String[] cmd = {"ipconfig"};
-//    	String result = processCmd.execCmd(cmd);
-//    	System.out.println(result);
+    	String result = processCmd.execCmd(cmd);
+    	System.out.println(result);
     	
 //    	Map<Long, String> map = new HashMap<Long, String>();
 //    	map.put(12842L, "first");
